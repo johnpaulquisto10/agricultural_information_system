@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <title>Agricultural Information System – Bansud</title>
+
+  <!-- Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    NOTE: This is a development-only setup using Tailwind CDN.
+    For production, you should:
+    1. Install Tailwind as a PostCSS plugin: npm install -D tailwindcss postcss autoprefixer
+    2. Initialize config: npx tailwindcss init -p
+    3. Use a proper build process
+  -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              DEFAULT: '#166534',
+              light: '#22c55e',
+              dark: '#14532d',
+            },
+            accent: {
+              DEFAULT: '#facc15',
+              light: '#fde047',
+              dark: '#eab308',
+            },
+            success: '#22c55e',
+            warning: '#f59e0b',
+            error: '#ef4444',
+            background: '#f9fafb',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Poppins', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <!-- ✅ Optional: Google Font for better aesthetics -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- ✅ Base style to apply background -->
+  <style>
+    body {
+      background-color: #F1F8E9;
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen text-gray-800">
+  <div id="root"></div>
+
+  <!-- ✅ React entry -->
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+
+</html>

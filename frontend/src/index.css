@@ -1,0 +1,65 @@
+/* Base Tailwind styles */
+@layer base {
+  body {
+    @apply bg-background text-gray-900 min-h-screen;
+  }
+}
+
+/* Custom utility classes */
+@layer components {
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-dark text-white font-semibold px-4 py-2 rounded-xl transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-accent hover:bg-accent-dark text-gray-900 font-semibold px-4 py-2 rounded-xl transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow duration-200 p-6;
+  }
+
+  .input-field {
+    @apply rounded-lg border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary focus:ring-opacity-20 outline-none transition-all duration-200;
+  }
+
+  .nav-link {
+    @apply text-gray-600 hover:text-primary transition-colors duration-200;
+  }
+
+  .nav-link-active {
+    @apply text-primary font-medium;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
