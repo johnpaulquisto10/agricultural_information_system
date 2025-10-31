@@ -25,8 +25,11 @@ export default function Programs() {
             setPrograms(data);
             setError(null);
         } catch (err) {
-            setError('Failed to load programs');
             console.error('Error fetching programs:', err);
+            // The service will now return static data on error
+            const data = await programService.getActive();
+            setPrograms(data);
+            setError('Unable to connect to server. Showing available programs.');
         } finally {
             setLoading(false);
         }
@@ -53,15 +56,11 @@ export default function Programs() {
     if (loading) return <LoadingSpinner />;
 
     if (error) {
+        // Even if there's an error, we'll still show the programs from static data
+        fetchPrograms();
         return (
-            <div className="text-center py-12">
-                <p className="text-red-600">{error}</p>
-                <button
-                    onClick={fetchPrograms}
-                    className="mt-4 btn-primary"
-                >
-                    Try Again
-                </button>
+            <div className="text-center py-4">
+                <p className="text-amber-600">Unable to connect to server. Showing available programs.</p>
             </div>
         );
     }

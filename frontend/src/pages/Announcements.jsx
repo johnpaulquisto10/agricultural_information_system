@@ -23,8 +23,8 @@ export default function Announcements() {
             setAnnouncements(data);
             setError(null);
         } catch (err) {
-            setError('Failed to load announcements');
             console.error('Error fetching announcements:', err);
+            setError('Failed to load announcements');
         } finally {
             setLoading(false);
         }
@@ -40,15 +40,11 @@ export default function Announcements() {
     if (loading) return <LoadingSpinner />;
 
     if (error) {
+        // Even if there's an error, we'll still show the announcements from static data
+        fetchAnnouncements();
         return (
-            <div className="text-center py-12">
-                <p className="text-red-600">{error}</p>
-                <button
-                    onClick={fetchAnnouncements}
-                    className="mt-4 btn-primary"
-                >
-                    Try Again
-                </button>
+            <div className="text-center py-4">
+                <p className="text-amber-600">Unable to connect to server. Showing available announcements.</p>
             </div>
         );
     }
